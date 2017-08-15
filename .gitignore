@@ -1,0 +1,8 @@
+node_modules
+*.log
+plugins/*
+hooks/*
+res/screen/*
+res/icon/*
+res/README.md
+
