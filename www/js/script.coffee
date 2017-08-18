@@ -1,15 +1,31 @@
-app =
-  initialize: ->
-    document.addEventListener('deviceready', this.onDeviceReady.bind(this), false)
-  onDeviceReady: ->
-    this.receivedEvent('deviceready')
-  receivedEvent: (id)->
-      parentElement = document.getElementById(id)
-      listeningElement = parentElement.querySelector('.listening')
-      receivedElement = parentElement.querySelector('.received')
+imbay = new Framework7({
+  material: true
+})
 
-      listeningElement.setAttribute('style', 'display:none;')
-      receivedElement.setAttribute('style', 'display:block;')
+imbay.init()
 
-      console.log('Received Event: ' + id)
-app.initialize();
+$$ = Dom7
+
+min = new Date(1900, 0, 1)
+max = new Date(2012, 11, 31)
+
+birthday = imbay.calendar({
+    minDate: min,
+    maxDate: max,
+    value: [new Date(1996, 10, 21)],
+    input: '#calendar-default',
+    dateFormat: 'dd MM yyyy',
+    weekHeader: false,
+    direction: 'vertical',
+    scrollToInput: true,
+})
+
+mainView = imbay.addView('.view-main', {
+  domCache: true
+})
+
+imbay.onPageAfterAnimation 'sign_in', (page)->
+  console.log 'Initialized page: '+page.name
+
+imbay.onPageAfterAnimation 'sign_up', (page)->
+  console.log 'Initialized page: '+page.name

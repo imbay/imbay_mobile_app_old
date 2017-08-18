@@ -1,0 +1,58 @@
+div.page(data-page='sign_up')
+  div.page-content
+    div.form
+      form(onsubmit='return false' autocomplete='off')
+        div.list-block
+          ul
+            li
+              div.item-content
+                div.item-inner
+                  div.item-title.floating-label First name
+                  div.item-input
+                    input(type='text' name='first_name')
+            li
+              div.item-content
+                div.item-inner
+                  div.item-title.floating-label Last name
+                  div.item-input
+                    input(type='text' name='last_name')
+            li
+              div.item-content
+                div.item-inner
+                  div.item-title.floating-label Birthday
+                  div.item-input
+                    input#birthday(type='text' name='birthday' readonly)
+            li.gender
+              div.item-content
+                div.item-inner
+                  div.content-block-title Gender
+                  ul
+                    li
+                      label.label-radio.item-content
+                        input(type='radio' name='gender' value='1')
+                        div.item-media
+                            i.icon.icon-form-radio
+                        div.item-inner
+                          div.item-title Man
+                    li
+                      label.label-radio.item-content
+                        input(type='radio' name='gender' value='0')
+                        div.item-media
+                            i.icon.icon-form-radio
+                        div.item-inner
+                          div.item-title Woman
+            li
+              div.item-content
+                div.item-inner
+                  div.item-title.floating-label Username
+                  div.item-input
+                    input(type='text' name='username')
+            li
+              div.item-content
+                div.item-inner
+                  div.item-title.floating-label Password
+                  div.item-input
+                    input(type='text' name='password')
+        button.button.button-raised.button-fill.color-blue Sign up
+    div.links
+      a.button.color-blue(href='#sign_in') Sign in

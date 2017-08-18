@@ -1,17 +1,123 @@
 doctype html
 html
   head
-    meta(http-equiv='content-type' content='text/html; charset=utf-8')
-    meta(name='viewport' content='user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width')
-    meta(name='format-detection' content='telephone=no')
-    meta(name='msapplication-tap-highlight' content='no')
-    link(rel='stylesheet' type='text/css' href='css/lib/onsen-css-components.css')
-    link(rel='stylesheet' type='text/css' href='css/lib/onsenui.css')
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui')
+    link(rel='stylesheet' type='text/css' href='css/lib/font-awesome.css')
+    link(rel='stylesheet' type='text/css' href='css/lib/framework7.material.css')
+    link(rel='stylesheet' type='text/css' href='css/lib/framework7.material.colors.css')
     link(rel='stylesheet' type='text/css' href='css/styles.css')
   body
-    div.app
-    script(type='text/javasript' src='js/lib/cordova.js')
-    script(type='text/javasript' src='js/lib/angular.js')
-    script(type='text/javasript' src='js/lib/onsenui.js')
-    script(type='text/javasript' src='js/lib/angular-onsenui.js')
-    script(type='text/javasript' src='js/script.js')
+    div.statusbar-overlay
+    div.views
+      div.view.view-main
+        div.pages
+          
+          div.page(data-page='sign_up')
+            div.page-content
+              div.form
+                form(onsubmit='return false' autocomplete='off')
+                  div.list-block
+                    ul
+                      li
+                        div.item-content
+                          div.item-inner
+                            div.item-title.floating-label First name
+                            div.item-input
+                              input(type='text' name='first_name')
+                      li
+                        div.item-content
+                          div.item-inner
+                            div.item-title.floating-label Last name
+                            div.item-input
+                              input(type='text' name='last_name')
+                      li
+                        div.item-content
+                          div.item-inner
+                            div.item-title.floating-label Birthday
+                            div.item-input
+                              input(type='text' name='birthday' readonly id='calendar-default')
+                      li.gender
+                        div.item-content
+                          div.item-inner
+                            div.content-block-title Gender
+                            ul
+                              li
+                                label.label-radio.item-content
+                                  input(type='radio' name='gender' value='1')
+                                  div.item-media
+                                      i.icon.icon-form-radio
+                                  div.item-inner
+                                    div.item-title Man
+                              li
+                                label.label-radio.item-content
+                                  input(type='radio' name='gender' value='0')
+                                  div.item-media
+                                      i.icon.icon-form-radio
+                                  div.item-inner
+                                    div.item-title Woman
+                      li
+                        div.item-content
+                          div.item-inner
+                            div.item-title.floating-label Username
+                            div.item-input
+                              input(type='text' name='username')
+                      li
+                        div.item-content
+                          div.item-inner
+                            div.item-title.floating-label Password
+                            div.item-input
+                              input(type='text' name='password')
+                  button.button.button-raised.button-fill.color-blue Sign up
+              div.links
+                hr
+                a.button.color-blue(href='#sign_in') Sign in
+          
+          div.page(data-page='recovery_password')
+            div.page-content
+              div.logo
+                img(src='img/main_logo.png' alt='')
+              div.form
+                form(onsubmit='return false' autocomplete='off')
+                  div.list-block
+                    ul
+                      li
+                        div.item-content
+                          div.item-inner
+                            div.item-title.floating-label E-mail
+                            div.item-input
+                              input(type='text' name='text')
+                  button.button.button-raised.button-fill.color-blue Recovery password
+              div.links
+                a.button.color-blue(href='#sign_in') Sign in
+                a.button.color-blue(href='#sign_up') Sign up
+          
+          div.page(data-page='sign_in')
+            div.page-content
+              div.logo
+                img(src='img/main_logo.png' alt='')
+              div.form
+                form(onsubmit='return false' autocomplete='off')
+                  div.list-block
+                    ul
+                      li
+                        div.item-content
+                          div.item-inner
+                            div.item-title.floating-label Username
+                            div.item-input
+                              input(type='text' name='username')
+                      li
+                        div.item-content
+                          div.item-inner
+                            div.item-title.floating-label Password
+                            div.item-input
+                              input(type='text' name='password')
+                  button.button.button-raised.button-fill.color-blue Sign in
+              div.links
+                hr
+                a.button.color-blue(href='#recovery_password') Recovery password
+                a.button.color-blue(href='#sign_up') Sign up
+                
+    script(type='text/javascript' src='js/lib/angular.js')
+    script(type='text/javascript' src='js/lib/framework7.js')
+    script(type='text/javascript' src='js/script.js')

@@ -16,10 +16,10 @@ ext = {
 	css: '.css'
 },
 liveReload = {
-	on: false,
+	on: true,
 	host: '127.0.0.1',
 	port: 2001,
-	baseDir: './',
+	baseDir: './www',
 	open: true,
 	notify: false
 };

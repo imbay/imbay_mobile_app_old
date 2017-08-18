@@ -21,27 +21,30 @@ rm -f www/js/lib/angular.js &&\
 wget https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js &&\
 mv angular.min.js www/js/lib/angular.js
 
-rm -f www/js/lib/onsenui.js &&\
-rm -f www/js/lib/angular-onsenui.js &&\
-rm -f www/css/lib/onsenui.css &&\
-rm -f www/css/lib/onsen-css-components.css &&\
-rm -rf www/css/lib/font_awesome &&\
-rm -rf www/css/lib/ionicons &&\
-rm -rf www/css/lib/material-design-iconic-font &&\
-rm -rf 2.5.2.zip &&\
-rm -rf OnsenUI-dist-2.5.2 &&\
-wget https://github.com/OnsenUI/OnsenUI-dist/archive/2.5.2.zip &&\
-unzip 2.5.2.zip &&\
-mv OnsenUI-dist-2.5.2/js/onsenui.min.js www/js/lib/onsenui.js &&\
-mv OnsenUI-dist-2.5.2/js/angular-onsenui.min.js www/js/lib/angular-onsenui.js &&\
-mv OnsenUI-dist-2.5.2/css/onsenui.min.css www/css/lib/onsenui.css &&\
-mv OnsenUI-dist-2.5.2/css/onsen-css-components.min.css www/css/lib/onsen-css-components.css &&\
-mv OnsenUI-dist-2.5.2/css/material-design-iconic-font www/css/lib &&\
-mv OnsenUI-dist-2.5.2/css/ionicons www/css/lib &&\
-mv OnsenUI-dist-2.5.2/css/font_awesome www/css/lib &&\
-rm 2.5.2.zip &&\
-rm -r OnsenUI-dist-2.5.2
+rm -f font-awesome-4.7.0.zip &&\
+rm -f www/css/fonts/* &&\
+rm -f www/css/lib/font-awesome.css &&\
+rm -rf font-awesome-4.7.0 &&\
+wget http://fontawesome.io/assets/font-awesome-4.7.0.zip &&\
+unzip font-awesome-4.7.0.zip &&\
+rm font-awesome-4.7.0.zip &&\
+mv font-awesome-4.7.0/css/font-awesome.min.css www/css/lib/font-awesome.css &&\
+mv font-awesome-4.7.0/fonts/* www/css/fonts &&\
+rm -r font-awesome-4.7.0
+
+rm -f v1.6.4.zip &&\
+rm -rf Framework7-1.6.4 &&\
+rm -f www/js/lib/framework7.js &&\
+rm -f www/css/lib/framework7.material.css &&\
+rm -f www/css/lib/framework7.material.colors.css &&\
+wget https://github.com/nolimits4web/Framework7/archive/v1.6.4.zip &&\
+unzip v1.6.4.zip &&\
+rm v1.6.4.zip &&\
+mv Framework7-1.6.4/dist/js/framework7.min.js www/js/lib/framework7.js &&\
+mv Framework7-1.6.4/dist/css/framework7.material.min.css www/css/lib/framework7.material.css &&\
+mv Framework7-1.6.4/dist/css/framework7.material.colors.min.css www/css/lib/framework7.material.colors.css &&\
+rm -r Framework7-1.6.4
 
 gulp start
 
-cordova run browser
+git checkout dev && sudo chmod 777 save.sh && ./save.sh

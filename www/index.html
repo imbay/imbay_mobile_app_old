@@ -1,20 +1,178 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
-    <link rel="stylesheet" type="text/css" href="css/lib/onsen-css-components.css">
-    <link rel="stylesheet" type="text/css" href="css/lib/onsenui.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" type="text/css" href="css/lib/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/lib/framework7.material.css">
+    <link rel="stylesheet" type="text/css" href="css/lib/framework7.material.colors.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
   <body>
-    <div class="app"></div>
-    <script type="text/javasript" src="js/lib/cordova.js"></script>
-    <script type="text/javasript" src="js/lib/angular.js"></script>
-    <script type="text/javasript" src="js/lib/onsenui.js"></script>
-    <script type="text/javasript" src="js/lib/angular-onsenui.js"></script>
-    <script type="text/javasript" src="js/script.js"></script>
+    <div class="statusbar-overlay"></div>
+    <div class="views">
+      <div class="view view-main">
+        <div class="pages">
+          <div class="page" data-page="sign_up">
+            <div class="page-content">
+              <div class="form">
+                <form onsubmit="return false" autocomplete="off">
+                  <div class="list-block">
+                    <ul>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title floating-label">First name</div>
+                            <div class="item-input">
+                              <input type="text" name="first_name">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title floating-label">Last name</div>
+                            <div class="item-input">
+                              <input type="text" name="last_name">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title floating-label">Birthday</div>
+                            <div class="item-input">
+                              <input type="text" name="birthday" readonly id="calendar-default">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="gender">
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="content-block-title">Gender</div>
+                            <ul>
+                              <li>
+                                <label class="label-radio item-content">
+                                  <input type="radio" name="gender" value="1">
+                                  <div class="item-media"><i class="icon icon-form-radio"></i></div>
+                                  <div class="item-inner">
+                                    <div class="item-title">Man</div>
+                                  </div>
+                                </label>
+                              </li>
+                              <li>
+                                <label class="label-radio item-content">
+                                  <input type="radio" name="gender" value="0">
+                                  <div class="item-media"><i class="icon icon-form-radio"></i></div>
+                                  <div class="item-inner">
+                                    <div class="item-title">Woman</div>
+                                  </div>
+                                </label>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title floating-label">Username</div>
+                            <div class="item-input">
+                              <input type="text" name="username">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title floating-label">Password</div>
+                            <div class="item-input">
+                              <input type="text" name="password">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <button class="button button-raised button-fill color-blue">Sign up</button>
+                </form>
+              </div>
+              <div class="links">
+                <hr><a class="button color-blue" href="#sign_in">Sign in</a>
+              </div>
+            </div>
+          </div>
+          <div class="page" data-page="recovery_password">
+            <div class="page-content">
+              <div class="logo"><img src="img/main_logo.png" alt=""></div>
+              <div class="form">
+                <form onsubmit="return false" autocomplete="off">
+                  <div class="list-block">
+                    <ul>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title floating-label">E-mail</div>
+                            <div class="item-input">
+                              <input type="text" name="text">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <button class="button button-raised button-fill color-blue">Recovery password</button>
+                </form>
+              </div>
+              <div class="links"><a class="button color-blue" href="#sign_in">Sign in</a><a class="button color-blue" href="#sign_up">Sign up</a></div>
+            </div>
+          </div>
+          <div class="page" data-page="sign_in">
+            <div class="page-content">
+              <div class="logo"><img src="img/main_logo.png" alt=""></div>
+              <div class="form">
+                <form onsubmit="return false" autocomplete="off">
+                  <div class="list-block">
+                    <ul>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title floating-label">Username</div>
+                            <div class="item-input">
+                              <input type="text" name="username">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title floating-label">Password</div>
+                            <div class="item-input">
+                              <input type="text" name="password">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <button class="button button-raised button-fill color-blue">Sign in</button>
+                </form>
+              </div>
+              <div class="links">
+                <hr><a class="button color-blue" href="#recovery_password">Recovery password</a><a class="button color-blue" href="#sign_up">Sign up</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/lib/angular.js"></script>
+    <script type="text/javascript" src="js/lib/framework7.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>

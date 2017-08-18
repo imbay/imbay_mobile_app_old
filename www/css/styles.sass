@@ -1,0 +1,54 @@
+hr
+  background: transparent
+  border: none
+  border-top: 1px solid rgba(0,0,0,0.1)
+  margin-bottom: 15px
+div.page[data-page='sign_up'],
+div.page[data-page='sign_in'],
+div.page[data-page='recovery_password']
+  div.page-content
+    div.logo,
+    div.title,
+    div.form,
+    div.links
+      margin: 0 auto
+      max-width: 400px
+      @media screen and (max-width: 450px)
+        margin: 0
+        margin-left: 15px
+        margin-right: 15px
+    div.logo
+      text-align: center
+      margin-top: 30px
+      margin-bottom: 5px
+      img
+        max-width: 200px
+    div.title
+      text-align: center
+      margin-top: 25px
+      font-size: 130%
+      border-bottom: 1px solid rgba(0,0,0,0.1)
+      padding-bottom: 25px
+      color: rgba(0,0,0,0.5)
+      margin-bottom: 30px
+    div.form
+      li.gender
+        div.item-content
+          padding-left: 0
+        ul
+          padding-left: 0
+          li
+      div.list-block
+        margin: 0
+        margin-top: 5px
+        ul:before
+          background-color: transparent !important
+      button
+        margin-top: 25px
+    div.links
+      margin-top: 15px
+      margin-bottom: 25px
+      a.button
+        margin-top: 5px
+    button
+      width: 100%

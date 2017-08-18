@@ -1,0 +1,24 @@
+div.page(data-page='sign_in')
+  div.page-content
+    div.logo
+      img(src='img/main_logo.png' alt='')
+    div.form
+      form(onsubmit='return false' autocomplete='off')
+        div.list-block
+          ul
+            li
+              div.item-content
+                div.item-inner
+                  div.item-title.floating-label Username
+                  div.item-input
+                    input(type='text' name='username')
+            li
+              div.item-content
+                div.item-inner
+                  div.item-title.floating-label Password
+                  div.item-input
+                    input(type='text' name='password')
+        button.button.button-raised.button-fill.color-blue Sign in
+    div.links
+      a.button.color-blue(href='#recovery') Recovery
+      a.button.color-blue(href='#sign_up') Sign up
