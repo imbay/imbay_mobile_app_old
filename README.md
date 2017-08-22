@@ -48,3 +48,5 @@ rm -r Framework7-1.6.4
 gulp start
 
 git checkout dev && sudo chmod 777 save.sh && ./save.sh
+
+git rm -r --cached . && git reset && git add --all && git commit -m "dev" && git push origin master
